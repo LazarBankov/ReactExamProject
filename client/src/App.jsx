@@ -1,12 +1,14 @@
 import { Routes, Route } from 'react-router'
 
-import Footer from './components/footer/Footer'
 import Header from './components/header/Header'
-import './App.css'
+import Footer from './components/footer/Footer'
 import Home from './components/home/Home'
-import About from './components/about/About'
 import Catalog from './components/catalog/Catalog'
 import DetailsProduct from './components/details/DetailsProduct'
+import About from './components/about/About'
+import ErrorComponent from './components/error/ErrorComponent'
+import Cart from './components/cart/Cart'
+import './App.css'
 
 function App() {
 
@@ -19,6 +21,9 @@ function App() {
             <Route path='/catalog/:prductId' element={<DetailsProduct/>} />
             <Route path='/catalog' element={<Catalog/>} />
             <Route path='/about' element={<About/>} />
+            <Route path='/cart/:userId' element={<Cart/>} />
+            <Route path='/error' element={<ErrorComponent/>} />
+            <Route path='*' element={<ErrorComponent/>} />
           </Routes>
         </main>
         <Footer />
