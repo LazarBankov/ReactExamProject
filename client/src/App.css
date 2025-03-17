@@ -21,30 +21,19 @@ button {
 }
 
 .container {
-    width: 80%;
     margin: 0 auto;
-    padding: 20px;
-}
-
-header {
-    background-color: #553a79;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
 }
 
 footer {
-    background-color: #333;
+    background-color: #575656;
     color: white;
     text-align: center;
-    padding: 10px 0;
     position: fixed;
     width: 100%;
     bottom: 0;
 }
 
 main {
-    padding: 20px;
     background-color: white;
     margin-top: 20px;
     border-radius: 5px;
