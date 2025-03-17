@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router'
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
@@ -8,6 +9,8 @@ import DetailsProduct from './components/details/DetailsProduct'
 import About from './components/about/About'
 import ErrorComponent from './components/error/ErrorComponent'
 import Cart from './components/cart/Cart'
+import Login from './components/login/Login';
+import Register from './components/register/Register';
 import './App.css'
 
 function App() {
@@ -22,7 +25,8 @@ function App() {
             <Route path='/catalog' element={<Catalog/>} />
             <Route path='/about' element={<About/>} />
             <Route path='/cart/:userId' element={<Cart/>} />
-            <Route path='/error' element={<ErrorComponent/>} />
+            <Route path='/register' element={<Register/>} />
+            <Route path='/login' element={<Login/>} />
             <Route path='*' element={<ErrorComponent/>} />
           </Routes>
         </main>
