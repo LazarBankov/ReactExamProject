@@ -1,4 +1,3 @@
-
 header {
     background-color: #553a79;
     color: white;
@@ -7,4 +6,31 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    height: 40px;
+    cursor: pointer;
+}
+
+.navList {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 30px 5px 0px;
+    list-style: none;
+    margin: 0;
+}
+
+.navItem {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.navItem a:hover {
+    color: #f173e7;
 }
