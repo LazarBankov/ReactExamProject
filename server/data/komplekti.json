@@ -7,6 +7,7 @@
       "price": 1200.00,
       "created_at": "2025-01-01T10:00:00Z",
       "updated_at": "2025-03-01T14:30:00Z",
+      "type": "dress",
       "comments": [
         {
           "_id": "user123",
@@ -28,6 +29,7 @@
       "price": 1500.00,
       "created_at": "2025-02-01T09:30:00Z",
       "updated_at": "2025-03-15T11:45:00Z",
+      "type": "cake",
       "comments": [
         {
           "_id": "user789",
@@ -49,6 +51,7 @@
       "price": 250.00,
       "created_at": "2025-03-10T12:15:00Z",
       "updated_at": "2025-03-20T13:50:00Z",
+      "type": "flowers",
       "comments": [
         {
           "_id": "user101",
@@ -70,6 +73,7 @@
       "price": 2500.00,
       "created_at": "2025-01-15T15:30:00Z",
       "updated_at": "2025-02-25T16:40:00Z",
+      "type": "rings",
       "comments": [
         {
           "_id": "user234",
@@ -86,6 +90,7 @@
       "price": 150.00,
       "created_at": "2025-03-01T14:00:00Z",
       "updated_at": "2025-03-15T16:20:00Z",
+      "type": "invitations",
       "comments": [
         {
           "_id": "user654",

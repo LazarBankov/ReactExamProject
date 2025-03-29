@@ -1,4 +1,4 @@
-const requestTemplate = async (method, url, data, options = {}) => {
+const request = async (method, url, data, options = {}) => {
     if (method !== 'GET') {
         options.method = method;
     }
@@ -15,13 +15,18 @@ const requestTemplate = async (method, url, data, options = {}) => {
     }
 
     const response = await fetch(url, options);
-    console.log(response);
-    
+
     const responseContentType = response.headers.get('Content-Type');
     if (!responseContentType) {
         return;
     }
-    
+
+    if (!response.ok) {
+        const result = await response.json()
+
+        throw result;
+    }
+
     const result = await response.json();
 
     return result;
@@ -29,10 +34,9 @@ const requestTemplate = async (method, url, data, options = {}) => {
 };
 
 export default {
-    get: requestTemplate.bind(null, 'GET'),
-    // get: (...params) => request('GET', ...params)
-    post: requestTemplate.bind(null, 'POST'),
-    put: requestTemplate.bind(null, 'PUT'),
-    delete: requestTemplate.bind(null, 'DELETE'),
-    baseRequest: requestTemplate,
+    get: request.bind(null, 'GET'),
+    post: request.bind(null, 'POST'),
+    put: request.bind(null, 'PUT'),
+    delete: request.bind(null, 'DELETE'),
+    baseRequest: request,
 }
