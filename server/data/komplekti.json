@@ -1,0 +1,98 @@
+[
+    {
+      "_id": "1",
+      "imageUrl": "https://example.com/images/wedding-dress.jpg",
+      "name": "Elegant Wedding Dress",
+      "description": "A stunning white wedding dress made with lace and satin, perfect for a classic wedding.",
+      "price": 1200.00,
+      "created_at": "2025-01-01T10:00:00Z",
+      "updated_at": "2025-03-01T14:30:00Z",
+      "comments": [
+        {
+          "_id": "user123",
+          "userName": "John Doe",
+          "comment": "Such a beautiful dress! Can’t wait to see my bride in this."
+        },
+        {
+          "_id": "user456",
+          "userName": "Jane Smith",
+          "comment": "The lace details are stunning, absolutely love this design!"
+        }
+      ]
+    },
+    {
+      "_id": "2",
+      "imageUrl": "https://example.com/images/wedding-cake.jpg",
+      "name": "Luxury Wedding Cake",
+      "description": "A 5-tier cake decorated with gold accents and fresh flowers, ideal for an extravagant wedding.",
+      "price": 1500.00,
+      "created_at": "2025-02-01T09:30:00Z",
+      "updated_at": "2025-03-15T11:45:00Z",
+      "comments": [
+        {
+          "_id": "user789",
+          "userName": "Emily Brown",
+          "comment": "I had this cake at my wedding, and it was a hit with all our guests!"
+        },
+        {
+          "_id": "user321",
+          "userName": "Michael Green",
+          "comment": "The cake design is elegant, but the price is a bit steep."
+        }
+      ]
+    },
+    {
+      "_id": "3",
+      "imageUrl": "https://example.com/images/wedding-flowers.jpg",
+      "name": "Wedding Flower Bouquet",
+      "description": "A beautiful bouquet of roses, lilies, and peonies, perfect for your wedding day.",
+      "price": 250.00,
+      "created_at": "2025-03-10T12:15:00Z",
+      "updated_at": "2025-03-20T13:50:00Z",
+      "comments": [
+        {
+          "_id": "user101",
+          "userName": "Lily Adams",
+          "comment": "The flowers were fresh and fragrant, exactly what I wanted for my wedding."
+        },
+        {
+          "_id": "user202",
+          "userName": "Chris Lewis",
+          "comment": "This bouquet is gorgeous! Highly recommend it for your big day."
+        }
+      ]
+    },
+    {
+      "_id": "4",
+      "imageUrl": "https://example.com/images/wedding-ring.jpg",
+      "name": "Diamond Wedding Ring Set",
+      "description": "A matching set of diamond wedding rings with a timeless design. The perfect symbol of love.",
+      "price": 2500.00,
+      "created_at": "2025-01-15T15:30:00Z",
+      "updated_at": "2025-02-25T16:40:00Z",
+      "comments": [
+        {
+          "_id": "user234",
+          "userName": "Sarah White",
+          "comment": "The ring set is exactly as shown in the pictures. So happy with my purchase!"
+        }
+      ]
+    },
+    {
+      "_id": "5",
+      "imageUrl": "https://example.com/images/wedding-invitations.jpg",
+      "name": "Custom Wedding Invitations",
+      "description": "Personalized wedding invitations with elegant designs, available in various colors and styles.",
+      "price": 150.00,
+      "created_at": "2025-03-01T14:00:00Z",
+      "updated_at": "2025-03-15T16:20:00Z",
+      "comments": [
+        {
+          "_id": "user654",
+          "userName": "Olivia Harris",
+          "comment": "These invitations were perfect for our wedding! Stylish and affordable."
+        }
+      ]
+    }
+  ]
+  

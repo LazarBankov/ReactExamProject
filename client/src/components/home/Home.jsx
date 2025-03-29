@@ -25,11 +25,11 @@ export default function Home() {
 
 
     return (
-        <div className="p-6">
+        <div className="p-6 bg-[#f173e7] border-0">
         <h1 className="text-3xl font-bold mb-6 text-center">Digital Shop</h1>
-        <div className="flex justify-center gap-18 flex-wrap">
+        <div className="flex justify-center gap-18 flex-wrap ">
           {products.map((product) => (
-            <div key={product.id} className="shadow-lg rounded-2xl overflow-hidden">
+            <div key={product.id} className="shadow-lg rounded-2xl overflow-hidden hover:bg-white transition duration-200">
               <img src={product.image} alt={product.name} className="w-full h-48 object-cover" />
               <div className="p-4 flex flex-col items-center justify-center">
                 <h2 className="text-lg font-semibold">{product.name}</h2>
