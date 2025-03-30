@@ -12,7 +12,6 @@ export default function Login() {
 
   const loginHandler = async (_, formData) => {
     const values = Object.fromEntries(formData);
-    console.log(values.email, values.password);
 
     try {
         const authData = await login(values.email, values.password);

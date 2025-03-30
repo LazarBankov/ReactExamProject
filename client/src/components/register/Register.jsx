@@ -13,7 +13,6 @@ export default function Register() {
       const { email, password } = Object.fromEntries(formData);
 
       const confirmPassword = formData.get('confirm-password');
-    console.log(email, password, confirmPassword);
     
       if (password !== confirmPassword) {
           console.log('Password missmatch');
