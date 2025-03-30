@@ -1,6 +1,8 @@
 import { Routes, Route } from 'react-router'
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
+import UserProvider from './provider/User';
+
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
 import Home from './components/home/Home'
@@ -16,6 +18,7 @@ import './App.css'
 function App() {
 
   return (
+    <UserProvider>
       <div className='container'>
         <Header />
         <main className='main'>
@@ -32,6 +35,7 @@ function App() {
         </main>
         <Footer />
       </div>
+    </UserProvider>
   )
 }
 
