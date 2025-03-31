@@ -14,3 +14,14 @@ export const useAllProducts = () => {
 }, []);
 return {products};
 }
+
+export const useLatestProducts = () => {
+    const [latestProducts, setLatestProducts] = useState([]);
+
+    useEffect(() => {
+        request.get(url)
+            .then((data) => setLatestProducts(Object.values(data).slice(-3)));
+
+}, []);
+return {latestProducts};
+}
