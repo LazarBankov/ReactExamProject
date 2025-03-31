@@ -18,10 +18,10 @@ export default function Header() {
             <nav className={styles.navList}>
                 {isAuthenticated ?(
                     <li className={styles.navList}>
-                    <Link className={styles.navItem} to="/logout">Logout</Link>
                     <Link className={styles.navItem} to="/cart/:userId">
                         <i className="fas fa-shopping-cart"></i>
                     </Link>
+                    <Link className={styles.navItem} to="/logout">Logout</Link>
                 </li>
                 ) : (
                     <li className={styles.navList}>

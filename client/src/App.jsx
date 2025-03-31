@@ -31,8 +31,8 @@ function App() {
             <Route path='/cart/:userId' element={<Cart/>} />
             <Route path='/register' element={<Register/>} />
             <Route path='/login' element={<Login/>} />
-            <Route path='/logout' element={<ErrorComponent/>} />
-            <Route path='*' element={<Logout/>} />
+            <Route path='/logout' element={<Logout/>} />
+            <Route path='*' element={<ErrorComponent/>} />
           </Routes>
         </main>
         <Footer />
