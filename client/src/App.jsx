@@ -13,6 +13,7 @@ import ErrorComponent from './components/error/ErrorComponent'
 import Cart from './components/cart/Cart'
 import Login from './components/login/Login';
 import Register from './components/register/Register';
+import Logout from './components/logout/Logout';
 import './App.css'
 
 function App() {
@@ -30,7 +31,8 @@ function App() {
             <Route path='/cart/:userId' element={<Cart/>} />
             <Route path='/register' element={<Register/>} />
             <Route path='/login' element={<Login/>} />
-            <Route path='*' element={<ErrorComponent/>} />
+            <Route path='/logout' element={<ErrorComponent/>} />
+            <Route path='*' element={<Logout/>} />
           </Routes>
         </main>
         <Footer />

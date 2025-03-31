@@ -7,7 +7,7 @@ export default function Home() {
 const { latestProducts = [] } = useLatestProducts()
 
     return (
-        <div className="p-6 bg-[#f173e7] border-0">
+        <div className="p-6 bg-[#f5c7f1] border-0">
         <h1 className="text-3xl font-bold mb-6 text-center">Digital Shop</h1>
         <div className="flex justify-center gap-18 flex-wrap ">
         {latestProducts.length > 0 ? (
