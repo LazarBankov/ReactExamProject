@@ -1,6 +1,7 @@
 import { Link } from "react-router";
+import useAuthHook from "@/hooks/useAuthHook";
 export default function Product({ product }) {
-    
+    const { isAuthenticated } = useAuthHook();
     return (
         <div className="shadow-lg rounded-2xl overflow-hidden hover:bg-white transition duration-200 max-w-xs mx-auto">
             <img
@@ -18,9 +19,11 @@ export default function Product({ product }) {
                         Details
                     </button>
                 </Link>
+                {isAuthenticated && (
                 <button className="bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition duration-200">
                     Add to Cart
-                </button>
+                </button> )
+                }
             </div>
         </div>
     );
