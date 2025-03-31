@@ -25,3 +25,14 @@ export const useLatestProducts = () => {
 }, []);
 return {latestProducts};
 }
+
+export const useProductDetails = (productId) => {
+    const [product, setProduct] = useState();
+    
+    useEffect(() => {
+        request.get(`${url}/${productId - 1}`)
+            .then((data) => setProduct(data));
+
+}, [productId]);
+return {product};
+}
