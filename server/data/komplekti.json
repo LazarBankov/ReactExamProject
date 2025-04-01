@@ -4,10 +4,13 @@
       "imageUrl": "/459197011_8585675771444150_1964434466116972985_n.jpg",
       "name": "Комплект кръщене мъжки",
       "description": "A stunning white wedding dress made with lace and satin, perfect for a classic wedding.",
-      "price": 1200.00,
+      "price": 1400.00,
       "created_at": "2025-01-01T10:00:00Z",
       "updated_at": "2025-03-01T14:30:00Z",
       "type": "dress",
+      "customers": [
+
+      ],
       "comments": [
         {
           "_id": "user123",
@@ -29,6 +32,9 @@
       "price": 1500.00,
       "created_at": "2025-02-01T09:30:00Z",
       "updated_at": "2025-03-15T11:45:00Z",
+      "customers": [
+
+      ],
       "type": "cake",
       "comments": [
         {
@@ -51,6 +57,9 @@
       "price": 250.00,
       "created_at": "2025-03-10T12:15:00Z",
       "updated_at": "2025-03-20T13:50:00Z",
+      "customers": [
+
+      ],
       "type": "flowers",
       "comments": [
         {
@@ -73,6 +82,9 @@
       "price": 2500.00,
       "created_at": "2025-01-15T15:30:00Z",
       "updated_at": "2025-02-25T16:40:00Z",
+      "customers": [
+
+      ],
       "type": "rings",
       "comments": [
         {
@@ -90,6 +102,9 @@
       "price": 150.00,
       "created_at": "2025-03-01T14:00:00Z",
       "updated_at": "2025-03-15T16:20:00Z",
+      "customers": [
+
+      ],
       "type": "invitations",
       "comments": [
         {
