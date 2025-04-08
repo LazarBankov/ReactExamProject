@@ -2,21 +2,30 @@ import { useProductDetails, useAddToCart } from "@/api/product";
 import Comments from "./comments/Comments";
 import useAuthHook from "@/hooks/useAuthHook";
 
-import { useParams } from "react-router";
+import {  useParams } from "react-router";
 
 export default function DetailsProduct() {
   const { productId } = useParams();
   const { product } = useProductDetails(productId);
-  const { name, description, price, imageUrl, comments } = product || {};
-  const { isAuthenticated, userId } = useAuthHook();
+  const { name, description, price, imageUrl, comments, customers } = product || {};
+  const { isAuthenticated, userId, userName } = useAuthHook();
+
   const addToCart = useAddToCart();
+
+  const isCustomer = customers && customers.includes(userId);
+
+  console.log("User is a customer:", isCustomer);
+
   const addToCartHandler = async () => {
+
     if (isAuthenticated) {
       await addToCart(productId, userId, product);
     } else {
       alert("Please log in to add items to your cart.");
     }
   };
+
+
   return (
     <div className="p-6 bg-[#f5c7f1] border-0 min-h-screen">
       <div className="container mx-auto px-6">
@@ -31,7 +40,7 @@ export default function DetailsProduct() {
               <h2 className="text-xl font-bold mt-4">{name}</h2>
               <p className="text-gray-700 mt-2">{description}</p>
               <p className="text-gray-900 font-semibold mt-2">${price}</p>
-              {isAuthenticated && (
+              {isAuthenticated && !isCustomer && (
                 <div className="flex justify-center gap-4 p-4">
                   <button
                     onClick={addToCartHandler}
@@ -53,7 +62,7 @@ export default function DetailsProduct() {
                   No comments available.
                 </p>
               )}
-              {isAuthenticated && (
+              {isCustomer && (
                 <form className="w-full mt-4">
                   <textarea
                     className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
@@ -61,6 +70,7 @@ export default function DetailsProduct() {
                     placeholder="Write your comment here..."
                   ></textarea>
                   <button
+                  
                     type="submit"
                     className="bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition duration-200 mt-2"
                   >

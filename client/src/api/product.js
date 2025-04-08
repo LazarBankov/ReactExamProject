@@ -38,7 +38,6 @@ export const useAddToCart = () => {
     return async (productId, userId) => {
         try {
             const product = await request.get(`${url}/${productId - 1}`);
-            console.log("Product details:", product);
             
             const updatedCustomers = product.customers ? [...product.customers] : [];
             
@@ -49,7 +48,6 @@ export const useAddToCart = () => {
                 ...product, 
                 customers: updatedCustomers, 
             });
-
             return response;
         } catch (error) {
             console.error("Error adding to cart:", error);
