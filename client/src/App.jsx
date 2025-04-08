@@ -14,7 +14,9 @@ import Cart from './components/cart/Cart'
 import Login from './components/login/Login';
 import Register from './components/register/Register';
 import Logout from './components/logout/Logout';
+import AuthGuard from './components/guards/AuthGuard';
 import './App.css'
+import GuestGuard from './components/guards/GuestGuard';
 
 function App() {
 
@@ -25,13 +27,17 @@ function App() {
         <main className='main'>
           <Routes>
             <Route path='/' element={<Home/>} />
-            <Route path='/catalog/:productId' element={<DetailsProduct/>} />
             <Route path='/catalog' element={<Catalog/>} />
+            <Route path='/catalog/:productId' element={<DetailsProduct/>} />
             <Route path='/about' element={<About/>} />
-            <Route path='/cart/:userId' element={<Cart/>} />
-            <Route path='/register' element={<Register/>} />
-            <Route path='/login' element={<Login/>} />
-            <Route path='/logout' element={<Logout/>} />
+            <Route element={<GuestGuard/>}>
+              <Route path='/login' element={<Login/>} />
+              <Route path='/register' element={<Register/>} />
+            </Route>
+            <Route element={<AuthGuard/>}>
+              <Route path='/cart/:userId' element={<Cart/>} />
+              <Route path='/logout' element={<Logout/>} />
+            </Route>
             <Route path='*' element={<ErrorComponent/>} />
           </Routes>
         </main>
