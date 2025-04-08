@@ -10,7 +10,7 @@ export default function Register() {
   const { userLoginHandler } = useUserContext();
 
   const registerHandler = async (formData) => {
-      const { email, password } = Object.fromEntries(formData);
+      const { email, password, username } = Object.fromEntries(formData);
 
       const confirmPassword = formData.get('confirm-password');
     
@@ -20,7 +20,7 @@ export default function Register() {
           return;
       }
 
-      const authData = await register(email, password);
+      const authData = await register(email, password, username);
 
       userLoginHandler(authData);
 
@@ -43,7 +43,18 @@ export default function Register() {
                 placeholder="Enter your email"
               />
             </div>
-  
+            <div className="form-control flex flex-col">
+              <label htmlFor="username" className="text-sm font-medium text-gray-700">
+                Username
+              </label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                className="mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter your Username"
+              />
+            </div>
             <div className="form-control flex flex-col">
               <label htmlFor="password" className="text-sm font-medium text-gray-700">
                 Password
