@@ -8,7 +8,7 @@ export default function DetailsProduct() {
   const { productId } = useParams();
   const navigate = useNavigate();
   const { product } = useProductDetails(productId);
-  const { name, description, price, imageUrl, comments, customers } =
+  const { name, description, price, imageUrl, comments = [], customers = [] } =
     product || {};
   const { isAuthenticated, userId, isAdmin } = useAuthHook();
 
@@ -39,7 +39,7 @@ export default function DetailsProduct() {
               <h2 className="text-xl font-bold mt-4">{name}</h2>
               <p className="text-gray-700 mt-2">{description}</p>
               <p className="text-gray-900 font-semibold mt-2">${price}</p>
-              {isAuthenticated && !isCustomer && (
+              {isAuthenticated && !isCustomer && !isAdmin && (
                 <div className="flex justify-center gap-4 p-4">
                   <button
                     onClick={addToCartHandler}
@@ -71,7 +71,7 @@ export default function DetailsProduct() {
                   No comments available.
                 </p>
               )}
-              {isCustomer && (
+              {isCustomer && !isAdmin && (
                 <form className="w-full mt-4">
                   <textarea
                     className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"

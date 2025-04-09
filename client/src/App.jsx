@@ -19,6 +19,7 @@ import GuestGuard from "./components/guards/GuestGuard";
 import AdminGuard from "./components/guards/AdminGuard";
 import "./App.css";
 import Create from "./components/create/Create";
+import EditProduct from "./components/details/edit/EditProduct";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
             <Route element={<AuthGuard />}>
               <Route element={<AdminGuard />}>
                 <Route path="/create" element={<Create />} />
+                <Route path="/edit/:productId" element={<EditProduct />} />
               </Route>
               <Route path="/cart/:userId" element={<Cart />} />
               <Route path="/logout" element={<Logout />} />

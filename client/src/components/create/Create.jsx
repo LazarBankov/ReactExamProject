@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 
 export default function Create() {
   const navigate = useNavigate();
-  const { create: createProduct } = useCreateProduct();
+  const createProduct  = useCreateProduct();
 
   const submitAction = async (formData) => {
     const productData = Object.fromEntries(formData);
