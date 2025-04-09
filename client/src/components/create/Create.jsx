@@ -7,8 +7,18 @@ export default function Create() {
 
   const submitAction = async (formData) => {
     const productData = Object.fromEntries(formData);
-
-    await createProduct(productData);
+    const finalProductData = {
+      ...productData,
+      _id: crypto.randomUUID(),
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+      customers: [],
+      comments: [],
+      type: productData.type || "default",
+      price: Number(productData.price),
+      imageUrl: productData.imageUrl || "https://via.placeholder.com/150",
+    };
+    await createProduct(finalProductData);
 
     navigate("/catalog");
   };
@@ -70,10 +80,25 @@ export default function Create() {
               Image URL
             </label>
             <input
-              type="url"
+              type="string"
               name="imageUrl"
               id="imageUrl"
               className="shadow appearance-none border bg-white rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              required
+            />
+          </div>
+          <div className="flex flex-col">
+            <label
+              className="text-sm font-medium text-gray-700 mb-2"
+              htmlFor="type"
+            >
+              Type
+            </label>
+            <input
+              type="text"
+              name="type"
+              id="type"
+              className="shadow appearance-none bg-white border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               required
             />
           </div>

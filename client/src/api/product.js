@@ -41,6 +41,22 @@ export const useDeleteProduct = () => {
   return { deleteProduct };
 }
 
+export const useEditProduct = () => {
+  const { request } = useAuthHook();
+  const editProduct = async (productId, productData) => {
+    console.log("Editing product:", productId, productData);
+    
+    try {
+      const response = await request.put(`${url}/${productId}`, {...productData, _id: productId});
+      console.log("Product edited successfully:", response);  
+      return response;
+    } catch (error) {
+      console.error("Error editing product:", error);
+    }
+  };
+  return editProduct;
+}
+
 export const useCreateProduct = () => {
   const { request } = useAuthHook();
   return async (productData) => {

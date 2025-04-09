@@ -47,6 +47,7 @@ export default function DetailsProduct() {
     alert(`Product ${name} deleted successfully.`);
     navigate("/catalog");
   };
+  
   return (
     <div className="p-6 bg-[#f5c7f1] border-0 min-h-screen">
       <div className="container mx-auto px-6">
