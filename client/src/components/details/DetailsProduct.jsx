@@ -1,12 +1,17 @@
-import { useProductDetails, useAddToCart, useDeleteProduct } from "@/api/product";
+import {
+  useProductDetails,
+  useAddToCart,
+  useDeleteProduct,
+} from "@/api/product";
 import Comments from "./comments/Comments";
 import useAuthHook from "@/hooks/useAuthHook";
 import { Link, useNavigate } from "react-router";
 import { useParams } from "react-router";
+import { useState } from "react";
+import { useEffect } from "react";
 
 export default function DetailsProduct() {
   const navigate = useNavigate();
-
   const { productId } = useParams();
   const { product } = useProductDetails(productId);
   const { deleteProduct } = useDeleteProduct(productId);
@@ -19,7 +24,10 @@ export default function DetailsProduct() {
     customers = [],
   } = product || {};
 
-  const { isAuthenticated, userId, isAdmin } = useAuthHook();
+  const [newComment, setNewComment] = useState("");
+  const [allComments, setAllComments] = useState(product?.comments || []);
+
+  const { isAuthenticated, userId, isAdmin, username } = useAuthHook();
 
   const addToCart = useAddToCart();
 
@@ -34,10 +42,37 @@ export default function DetailsProduct() {
     }
   };
 
-  const deleteClickHandler = async () => {
+  const handleCommentSubmit = async (e) => {
+    e.preventDefault();
+    if (!newComment.trim()) {
+      alert("Comment cannot be empty.");
+      return;
+    }
+    const commentData = {
+      productId,
+      username,
+      userId,
+      comment: newComment,
+    };
+    const updatedProduct = {
+      ...product,
+      comments: [...allComments, commentData],
+    };
+
+    await fetch(`http://localhost:3030/jsonstore/komplekti/${productId}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(updatedProduct),
+    });
+  
+    setAllComments([...allComments, commentData]);
+    setNewComment(""); // Clear input
     
+  }
+  const deleteClickHandler = async () => {
     const confirmDelete = window.confirm(
-      `Are you sure you want to delete the product ${name}? This action cannot be undone.`)
+      `Are you sure you want to delete the product ${name}? This action cannot be undone.`
+    );
     if (!confirmDelete) {
       return;
     }
@@ -47,7 +82,13 @@ export default function DetailsProduct() {
     alert(`Product ${name} deleted successfully.`);
     navigate("/catalog");
   };
-  
+
+  useEffect(() => {
+    if (product?.comments) {
+      setAllComments(product.comments);
+    }
+  }, [product]);
+
   return (
     <div className="p-6 bg-[#f5c7f1] border-0 min-h-screen">
       <div className="container mx-auto px-6">
@@ -80,7 +121,10 @@ export default function DetailsProduct() {
                   >
                     Delete Product
                   </button>
-                   <Link to={`/edit/${productId}`} className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-200">
+                  <Link
+                    to={`/edit/${productId}`}
+                    className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-200"
+                  >
                     Edit Product
                   </Link>
                 </div>
@@ -88,7 +132,7 @@ export default function DetailsProduct() {
               <h3 className="text-lg font-semibold mt-4">Comments</h3>
               {comments.length > 0 ? (
                 <div className="w-full mt-4 mb-4 border-t border-gray-300 py-2 space-y-4">
-                  {comments.map((comment) => (
+                  {allComments.map((comment) => (
                     <Comments key={comment._id} comments={comment} />
                   ))}
                 </div>
@@ -98,11 +142,13 @@ export default function DetailsProduct() {
                 </p>
               )}
               {isCustomer && !isAdmin && (
-                <form className="w-full mt-4">
+                <form className="w-full mt-4" onSubmit={handleCommentSubmit}>
                   <textarea
                     className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
                     rows="4"
                     placeholder="Write your comment here..."
+                    value={newComment}
+                    onChange={(e) => setNewComment(e.target.value)}
                   ></textarea>
                   <button
                     type="submit"

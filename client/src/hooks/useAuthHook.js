@@ -5,6 +5,7 @@ import request from "../utils/request";
 export default function useAuthHook() {
   const { accessToken, ...authData } = useContext(UserContext);
   const isAdmin = authData.email === "admin@abv.bg";
+  const username = authData.username
 
   const requestWrapper = useCallback(
     (method, url, data, options = {}) => {
@@ -40,6 +41,7 @@ export default function useAuthHook() {
     ...authData,
     accessToken,
     isAdmin,
+    username,
     userId: authData._id,
     isAuthenticated: !!accessToken,
     request: requestObject,
