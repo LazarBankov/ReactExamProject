@@ -66,7 +66,7 @@ export default function DetailsProduct() {
     });
   
     setAllComments([...allComments, commentData]);
-    setNewComment(""); // Clear input
+    setNewComment("");
     
   }
   const deleteClickHandler = async () => {
