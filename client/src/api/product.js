@@ -28,29 +28,41 @@ export const useProductDetails = (productId) => {
   const [product, setProduct] = useState();
 
   useEffect(() => {
-    request.get(`${url}/${productId - 1}`).then((data) => setProduct(data));
+    request.get(`${url}/${productId}`).then((data) => setProduct(data));
   }, [productId]);
   return { product };
 };
 
+export const useCreateProduct = () => {
+  const { request } = useAuthHook();
+  return async (productData) => {
+    try {
+      const response = await request.post(url, productData);
+      return response;
+    } catch (error) {
+      console.error("Error creating product:", error);
+    }
+  };
+};
+
 export const useAddToCart = () => {
-    const { request } = useAuthHook();
-    return async (productId, userId) => {
-        try {
-            const product = await request.get(`${url}/${productId - 1}`);
-            
-            const updatedCustomers = product.customers ? [...product.customers] : [];
-            
-            if (!updatedCustomers.includes(userId)) { 
-                updatedCustomers.push(userId);
-            }
-            const response = await request.put(`${url}/${productId - 1}`, { 
-                ...product, 
-                customers: updatedCustomers, 
-            });
-            return response;
-        } catch (error) {
-            console.error("Error adding to cart:", error);
-        }
-    };
+  const { request } = useAuthHook();
+  return async (productId, userId) => {
+    try {
+      const product = await request.get(`${url}/${productId}`);
+
+      const updatedCustomers = product.customers ? [...product.customers] : [];
+
+      if (!updatedCustomers.includes(userId)) {
+        updatedCustomers.push(userId);
+      }
+      const response = await request.put(`${url}/${productId}`, {
+        ...product,
+        customers: updatedCustomers,
+      });
+      return response;
+    } catch (error) {
+      console.error("Error adding to cart:", error);
+    }
+  };
 };
