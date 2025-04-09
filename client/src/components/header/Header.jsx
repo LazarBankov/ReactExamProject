@@ -3,7 +3,7 @@ import styles from "./Header.module.css";
 import useAuthHook from "../../hooks/useAuthHook";
 
 export default function Header() {
-  const { isAuthenticated } = useAuthHook();
+  const { isAuthenticated, isAdmin } = useAuthHook();
 
   return (
     <header className={styles.header}>
@@ -22,6 +22,11 @@ export default function Header() {
       <nav className={styles.navList}>
         {isAuthenticated ? (
           <li className={styles.navList}>
+            {isAdmin && (
+              <Link className={styles.navItem} to="/create">
+                Create
+              </Link>
+            )}
             <Link className={styles.navItem} to="/cart/:userId">
               <i className="fas fa-shopping-cart"></i>
             </Link>
