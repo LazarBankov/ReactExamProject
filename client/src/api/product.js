@@ -13,6 +13,23 @@ export const useAllProducts = () => {
   return { products };
 };
 
+export function useUpdateProduct() {
+  const { request } = useAuthHook();
+  const updateProduct = async (productId, productData) => {
+    try {
+      const response = await request.put(`${url}/${productId}`, {
+        ...productData,
+        _id: productId, // include ID to match existing record
+      });
+      return response;
+    } catch (error) {
+      console.error("Error editing product:", error);
+    }
+  };
+  return updateProduct;
+}
+
+
 export const useLatestProducts = () => {
   const [latestProducts, setLatestProducts] = useState([]);
 
@@ -44,11 +61,9 @@ export const useDeleteProduct = () => {
 export const useEditProduct = () => {
   const { request } = useAuthHook();
   const editProduct = async (productId, productData) => {
-    console.log("Editing product:", productId, productData);
     
     try {
       const response = await request.put(`${url}/${productId}`, {...productData, _id: productId});
-      console.log("Product edited successfully:", response);  
       return response;
     } catch (error) {
       console.error("Error editing product:", error);
