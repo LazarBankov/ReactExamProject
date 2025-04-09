@@ -14,13 +14,13 @@ export default function Create() {
   };
 
   return (
-    <div className="p-6 bg-[#f5c7f1] border-0 min-h-screen">
-      <div className="container mx-auto px-6">
+    <div className="min-h-screen flex items-center justify-center bg-[#f5c7f1] border-0">
+      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
         <h2 className="text-2xl font-bold mb-4 text-center">Create Product</h2>
-        <form action={submitAction}>
-          <div className="mb-4">
+        <form className="space-y-4" action={submitAction}>
+          <div className="flex flex-col">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2 text-center"
+              className="text-sm font-medium text-gray-700 mb-2"
               htmlFor="name"
             >
               Product Name
@@ -33,9 +33,9 @@ export default function Create() {
               required
             />
           </div>
-          <div className="mb-4">
+          <div className="flex flex-col">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2 text-center"
+              className="text-sm font-medium text-gray-700 mb-2"
               htmlFor="description"
             >
               Description
@@ -47,9 +47,9 @@ export default function Create() {
               required
             ></textarea>
           </div>
-          <div className="mb-4">
+          <div className="flex flex-col">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2 text-center"
+              className="text-sm font-medium text-gray-700 mb-2"
               htmlFor="price"
             >
               Price
@@ -62,9 +62,9 @@ export default function Create() {
               required
             />
           </div>
-          <div className="mb-4">
+          <div className="flex flex-col">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2 text-center"
+              className="text-sm font-medium text-gray-700 mb-2"
               htmlFor="imageUrl"
             >
               Image URL

@@ -1,15 +1,24 @@
-import { useProductDetails, useAddToCart } from "@/api/product";
+import { useProductDetails, useAddToCart, useDeleteProduct } from "@/api/product";
 import Comments from "./comments/Comments";
 import useAuthHook from "@/hooks/useAuthHook";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { useParams } from "react-router";
 
 export default function DetailsProduct() {
-  const { productId } = useParams();
   const navigate = useNavigate();
+
+  const { productId } = useParams();
   const { product } = useProductDetails(productId);
-  const { name, description, price, imageUrl, comments = [], customers = [] } =
-    product || {};
+  const { deleteProduct } = useDeleteProduct(productId);
+  const {
+    name,
+    description,
+    price,
+    imageUrl,
+    comments = [],
+    customers = [],
+  } = product || {};
+
   const { isAuthenticated, userId, isAdmin } = useAuthHook();
 
   const addToCart = useAddToCart();
@@ -25,6 +34,19 @@ export default function DetailsProduct() {
     }
   };
 
+  const deleteClickHandler = async () => {
+    
+    const confirmDelete = window.confirm(
+      `Are you sure you want to delete the product ${name}? This action cannot be undone.`)
+    if (!confirmDelete) {
+      return;
+    }
+
+    deleteProduct(productId);
+
+    alert(`Product ${name} deleted successfully.`);
+    navigate("/catalog");
+  };
   return (
     <div className="p-6 bg-[#f5c7f1] border-0 min-h-screen">
       <div className="container mx-auto px-6">
@@ -51,12 +73,15 @@ export default function DetailsProduct() {
               )}
               {isAdmin && (
                 <div className="flex justify-center gap-4 p-4">
-                  <button className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition duration-200">
+                  <button
+                    onClick={deleteClickHandler}
+                    className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition duration-200"
+                  >
                     Delete Product
                   </button>
-                  <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-200">
+                   <Link to={`/edit/${productId}`} className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-200">
                     Edit Product
-                  </button>
+                  </Link>
                 </div>
               )}
               <h3 className="text-lg font-semibold mt-4">Comments</h3>

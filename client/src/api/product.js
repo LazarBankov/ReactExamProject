@@ -33,6 +33,14 @@ export const useProductDetails = (productId) => {
   return { product };
 };
 
+export const useDeleteProduct = () => {
+  const { request } = useAuthHook();
+  const deleteProduct = (productId) => {
+    request.delete(`${url}/${productId}`);
+  }
+  return { deleteProduct };
+}
+
 export const useCreateProduct = () => {
   const { request } = useAuthHook();
   return async (productData) => {

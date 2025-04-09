@@ -27,9 +27,11 @@ export default function Header() {
                 Create
               </Link>
             )}
+            {!isAdmin && (
             <Link className={styles.navItem} to="/cart/:userId">
               <i className="fas fa-shopping-cart"></i>
             </Link>
+            )}
             <Link className={styles.navItem} to="/logout">
               Logout
             </Link>
