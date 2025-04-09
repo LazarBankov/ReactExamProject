@@ -1,30 +1,29 @@
 import { useProductDetails, useAddToCart } from "@/api/product";
 import Comments from "./comments/Comments";
 import useAuthHook from "@/hooks/useAuthHook";
-
-import {  useParams } from "react-router";
+import { useNavigate } from "react-router";
+import { useParams } from "react-router";
 
 export default function DetailsProduct() {
   const { productId } = useParams();
+  const navigate = useNavigate();
   const { product } = useProductDetails(productId);
-  const { name, description, price, imageUrl, comments, customers } = product || {};
-  const { isAuthenticated, userId, userName } = useAuthHook();
+  const { name, description, price, imageUrl, comments, customers } =
+    product || {};
+  const { isAuthenticated, userId, isAdmin } = useAuthHook();
 
   const addToCart = useAddToCart();
 
   const isCustomer = customers && customers.includes(userId);
 
-  console.log("User is a customer:", isCustomer);
-
   const addToCartHandler = async () => {
-
     if (isAuthenticated) {
       await addToCart(productId, userId, product);
+      navigate(`/catalog`);
     } else {
       alert("Please log in to add items to your cart.");
     }
   };
-
 
   return (
     <div className="p-6 bg-[#f5c7f1] border-0 min-h-screen">
@@ -50,6 +49,16 @@ export default function DetailsProduct() {
                   </button>
                 </div>
               )}
+              {isAdmin && (
+                <div className="flex justify-center gap-4 p-4">
+                  <button className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition duration-200">
+                    Delete Product
+                  </button>
+                  <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-200">
+                    Edit Product
+                  </button>
+                </div>
+              )}
               <h3 className="text-lg font-semibold mt-4">Comments</h3>
               {comments.length > 0 ? (
                 <div className="w-full mt-4 mb-4 border-t border-gray-300 py-2 space-y-4">
@@ -70,7 +79,6 @@ export default function DetailsProduct() {
                     placeholder="Write your comment here..."
                   ></textarea>
                   <button
-                  
                     type="submit"
                     className="bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition duration-200 mt-2"
                   >
