@@ -1,6 +1,6 @@
 [
     {
-      "_id": "1",
+      "_id": "0",
       "imageUrl": "/459197011_8585675771444150_1964434466116972985_n.jpg",
       "name": "Комплект кръщене мъжки",
       "description": "A stunning white wedding dress made with lace and satin, perfect for a classic wedding.",
@@ -25,7 +25,7 @@
       ]
     },
     {
-      "_id": "2",
+      "_id": "1",
       "imageUrl": "https://example.com/images/wedding-cake.jpg",
       "name": "Luxury Wedding Cake",
       "description": "A 5-tier cake decorated with gold accents and fresh flowers, ideal for an extravagant wedding.",
@@ -50,7 +50,7 @@
       ]
     },
     {
-      "_id": "3",
+      "_id": "2",
       "imageUrl": "https://example.com/images/wedding-flowers.jpg",
       "name": "Wedding Flower Bouquet",
       "description": "A beautiful bouquet of roses, lilies, and peonies, perfect for your wedding day.",
@@ -75,7 +75,7 @@
       ]
     },
     {
-      "_id": "4",
+      "_id": "3",
       "imageUrl": "https://example.com/images/wedding-ring.jpg",
       "name": "Diamond Wedding Ring Set",
       "description": "A matching set of diamond wedding rings with a timeless design. The perfect symbol of love.",
@@ -95,7 +95,7 @@
       ]
     },
     {
-      "_id": "5",
+      "_id": "4",
       "imageUrl": "/449975940_8178417742169957_3710753715297208585_n.jpg",
       "name": "Custom Wedding Invitations",
       "description": "Personalized wedding invitations with elegant designs, available in various colors and styles.",
