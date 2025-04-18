@@ -47,26 +47,26 @@ export default function Cart() {
               />
               <div className="product-details">
                 <h3>{product.name}</h3>
-                <p>${Number(product.price).toFixed(2)}</p>
+                <p>{Number(product.price).toFixed(2)}лв.</p>
                 <button
                   className="remove-button"
                   onClick={() => removeFromCart(product._id)}
                 >
-                  Remove from Cart
+                  Изтрий от количката
                 </button>
               </div>
             </div>
           ))
         ) : (
-          <p>No items in your cart.</p>
+          <p>Нямате продукти в количката</p>
         )}
       </div>
 
       <div className="summary-container">
-        <h2>Summary</h2>
-        <p>Total: ${total.toFixed(2)}</p>
+        <h2>Обща сума</h2>
+        <p>Общо: {total.toFixed(2)}лв.</p>
         <button className="checkout-button" disabled={userCart.length === 0}>
-          Checkout
+          Плащане
         </button>
       </div>
     </div>

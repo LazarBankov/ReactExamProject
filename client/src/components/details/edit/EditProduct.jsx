@@ -25,14 +25,14 @@ export default function EditProduct() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#f5c7f1] border-0">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-4 text-center">Edit Product</h2>
+        <h2 className="text-2xl font-bold mb-4 text-center">Редактирай</h2>
         <form id="edit" action={formAction} className="space-y-4" >
           <div className="flex flex-col">
             <label
               className="text-sm font-medium text-gray-700 mb-2"
               htmlFor="name"
             >
-              Product Name
+              Име на продукта
             </label>
             <input
               defaultValue={name}
@@ -48,7 +48,7 @@ export default function EditProduct() {
               className="text-sm font-medium text-gray-700 mb-2"
               htmlFor="description"
             >
-              Description
+              Описание на продукта
             </label>
             <textarea
               defaultValue={description}
@@ -64,7 +64,7 @@ export default function EditProduct() {
               className="text-sm font-medium text-gray-700 mb-2"
               htmlFor="price"
             >
-              Price
+              Цена
             </label>
             <input
               defaultValue={price}
@@ -80,7 +80,7 @@ export default function EditProduct() {
               className="text-sm font-medium text-gray-700 mb-2"
               htmlFor="type"
             >
-              Type
+              Тип на продукта
             </label>
             <input
             defaultValue={type}
@@ -96,7 +96,7 @@ export default function EditProduct() {
               className="text-sm font-medium text-gray-700 mb-2"
               htmlFor="imageUrl"
             >
-              Image URL
+              Адрес на изображение
             </label>
             <input
               defaultValue={imageUrl}
@@ -110,7 +110,7 @@ export default function EditProduct() {
             type="submit"
             className="bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition duration-200"
           >
-            Edit Product
+            Запази промените
           </button>
         </form>
       </div>

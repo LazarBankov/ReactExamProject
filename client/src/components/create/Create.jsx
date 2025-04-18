@@ -33,7 +33,7 @@ export default function Create() {
               className="text-sm font-medium text-gray-700 mb-2"
               htmlFor="name"
             >
-              Product Name
+              Име на продукта
             </label>
             <input
               type="text"
@@ -48,7 +48,7 @@ export default function Create() {
               className="text-sm font-medium text-gray-700 mb-2"
               htmlFor="description"
             >
-              Description
+              Описание на продукта
             </label>
             <textarea
               name="description"
@@ -62,7 +62,7 @@ export default function Create() {
               className="text-sm font-medium text-gray-700 mb-2"
               htmlFor="price"
             >
-              Price
+              Цена на продукта
             </label>
             <input
               type="number"
@@ -77,7 +77,7 @@ export default function Create() {
               className="text-sm font-medium text-gray-700 mb-2"
               htmlFor="imageUrl"
             >
-              Image URL
+              Адрес на изображение
             </label>
             <input
               type="string"
@@ -92,7 +92,7 @@ export default function Create() {
               className="text-sm font-medium text-gray-700 mb-2"
               htmlFor="type"
             >
-              Type
+              Тип на продукта
             </label>
             <input
               type="text"
@@ -106,7 +106,7 @@ export default function Create() {
             type="submit"
             className="bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition duration-200"
           >
-            Create Product
+            Създай продукт
           </button>
         </form>
       </div>

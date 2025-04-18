@@ -23,14 +23,14 @@ export default function ErrorComponent() {
           </div>
           <div className="flex flex-col">
             <h2 className="text-2xl font-semibold text-red-800 mb-2">
-              Something went wrong!
+              Нещо се обърка!
             </h2>
 
             <Link
               to="/"
               className="bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition duration-200 mt-2"
             >
-              Go to Home
+              Върни се на началната страница
             </Link>
           </div>
         </div>

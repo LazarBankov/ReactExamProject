@@ -16,7 +16,7 @@ export default function Product({ product }) {
             <div className="flex justify-center gap-4 p-4">
                 <Link to={`/catalog/${product._id}`}>
                     <button className="bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition duration-200">
-                        Details
+                        Детайли за продукта
                     </button>
                 </Link>
             </div>

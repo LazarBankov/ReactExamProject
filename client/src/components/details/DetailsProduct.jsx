@@ -102,14 +102,14 @@ export default function DetailsProduct() {
               />
               <h2 className="text-xl font-bold mt-4">{name}</h2>
               <p className="text-gray-700 mt-2">{description}</p>
-              <p className="text-gray-900 font-semibold mt-2">${price}</p>
+              <p className="text-gray-900 font-semibold mt-2">{price}лв.</p>
               {isAuthenticated && !isCustomer && !isAdmin && (
                 <div className="flex justify-center gap-4 p-4">
                   <button
                     onClick={addToCartHandler}
                     className="bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition duration-200"
                   >
-                    Add to Cart
+                    Добави в количката
                   </button>
                 </div>
               )}
@@ -119,17 +119,17 @@ export default function DetailsProduct() {
                     onClick={deleteClickHandler}
                     className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition duration-200"
                   >
-                    Delete Product
+                    Изтрий продукта
                   </button>
                   <Link
                     to={`/edit/${productId}`}
                     className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-200"
                   >
-                    Edit Product
+                    Редактирай продукта
                   </Link>
                 </div>
               )}
-              <h3 className="text-lg font-semibold mt-4">Comments</h3>
+              <h3 className="text-lg font-semibold mt-4">Коментари</h3>
               {comments.length > 0 ? (
                 <div className="w-full mt-4 mb-4 border-t border-gray-300 py-2 space-y-4">
                   {allComments.map((comment) => (
@@ -138,8 +138,7 @@ export default function DetailsProduct() {
                 </div>
               ) : (
                 <p className="text-center text-gray-700">
-                  No comments available.
-                </p>
+                    Няма налични коментари                </p>
               )}
               {isCustomer && !isAdmin && (
                 <form className="w-full mt-4" onSubmit={handleCommentSubmit}>
@@ -154,14 +153,14 @@ export default function DetailsProduct() {
                     type="submit"
                     className="bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition duration-200 mt-2"
                   >
-                    Submit Comment
+                    Добави коментар
                   </button>
                 </form>
               )}
             </div>
           ) : (
             <p className="text-center text-gray-700">
-              Loading product details...
+              Зареждане на продукта... Моля, изчакайте.
             </p>
           )}
         </div>

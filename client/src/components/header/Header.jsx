@@ -16,7 +16,7 @@ export default function Header() {
       </Link>
       <li className={styles.navList}>
         <Link className={styles.navItem} to="/catalog">
-          Catalog
+          Каталог
         </Link>
       </li>
       <nav className={styles.navList}>
@@ -24,7 +24,7 @@ export default function Header() {
           <li className={styles.navList}>
             {isAdmin && (
               <Link className={styles.navItem} to="/create">
-                Create
+                Създаване
               </Link>
             )}
             {!isAdmin && (
@@ -33,20 +33,20 @@ export default function Header() {
             </Link>
             )}
             <Link className={styles.navItem} to="/logout">
-              Logout
+              Излез от акаунта си
             </Link>
           </li>
         ) : (
           <li className={styles.navList}>
             <Link className={styles.navItem} to="/register">
-              Register
+              Регистрация
             </Link>
-            <Link to="/login">Login</Link>
+            <Link to="/login">Влез в акаунта си</Link>
           </li>
         )}
         <li className={styles.navList}>
           <Link className={styles.navItem} to="/about">
-            About
+            За нас
           </Link>
         </li>
       </nav>
