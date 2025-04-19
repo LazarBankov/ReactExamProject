@@ -3,7 +3,7 @@ import { UserContext } from "../contexts/Context"
 
 import request from "../utils/request"
 
-const baseUrl = 'https://reactexamproject.onrender.com/';
+const baseUrl = 'https://reactexamproject.onrender.com';
 
 export const useLogin = () => {
     const login = async (email, password) =>
