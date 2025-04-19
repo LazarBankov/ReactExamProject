@@ -59,7 +59,7 @@ export default function DetailsProduct() {
       comments: [...allComments, commentData],
     };
 
-    await fetch(`http://localhost:3030/jsonstore/komplekti/${productId}`, {
+    await fetch(`https://reactexamproject.onrender.com/jsonstore/komplekti/${productId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedProduct),

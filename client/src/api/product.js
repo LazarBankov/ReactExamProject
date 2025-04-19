@@ -2,7 +2,7 @@ import useAuthHook from "@/hooks/useAuthHook";
 import request from "../utils/request";
 import { useState, useEffect } from "react";
 
-const url = "http://localhost:3030/jsonstore/komplekti";
+const url = "https://reactexamproject.onrender.com/jsonstore/komplekti";
 
 export const useAllProducts = () => {
   const [products, setProducts] = useState([]);
