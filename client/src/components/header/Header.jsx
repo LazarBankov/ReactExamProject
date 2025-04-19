@@ -20,7 +20,7 @@ export default function Header() {
         </Link>
       </li>
       <nav className={styles.navList}>
-        {isAuthenticated ? (
+        {isAuthenticated && (
           <li className={styles.navList}>
             {isAdmin && (
               <Link className={styles.navItem} to="/create">
@@ -36,14 +36,7 @@ export default function Header() {
               Излез от акаунта си
             </Link>
           </li>
-        ) : (
-          <li className={styles.navList}>
-            <Link className={styles.navItem} to="/register">
-              Регистрация
-            </Link>
-            <Link to="/login">Влез в акаунта си</Link>
-          </li>
-        )}
+        ) }
         <li className={styles.navList}>
           <Link className={styles.navItem} to="/about">
             За нас

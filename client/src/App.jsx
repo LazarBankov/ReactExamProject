@@ -32,10 +32,10 @@ function App() {
             <Route path="/catalog" element={<Catalog />} />
             <Route path="/catalog/:productId" element={<DetailsProduct />} />
             <Route path="/about" element={<About />} />
-            <Route element={<GuestGuard />}>
+            {/* <Route element={<GuestGuard />}>
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
-            </Route>
+            </Route> */}
             <Route element={<AuthGuard />}>
               <Route element={<AdminGuard />}>
                 <Route path="/create" element={<Create />} />
