@@ -17,10 +17,10 @@
     },
     {
       "_id": "1",
-      "imageUrl": "https://scontent.fsof11-1.fna.fbcdn.net/v/t39.30808-6/468357321_122122903730549842_4922785253023084763_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=tmxsuBfInr4Q7kNvwH478Zu&_nc_oc=AdlfiN6K826DM-hHZCsItfgGswmc3b-ohCptDWlPQD0__sdLrxBxSCEKttz_-K910z8&_nc_zt=23&_nc_ht=scontent.fsof11-1.fna&_nc_gid=UysoRdLSPi-sZYMYjBqipg&oh=00_AfEWElZYzcKnv_BayXFAvYTRabd0Q1PrzwGbOBiYCH1fiw&oe=680ACAB1",
-      "name": "Luxury Wedding Cake",
-      "description": "A 5-tier cake decorated with gold accents and fresh flowers, ideal for an extravagant wedding.",
-      "price": 1500.00,
+      "imageUrl": "https://scontent.fsof8-1.fna.fbcdn.net/v/t39.30808-6/489913852_122152656230549842_2576839702342965380_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=IqTEiUCl-1cQ7kNvwG9NxDl&_nc_oc=AdnmuBxKvfOn-81UP2o9wyWoSDX9MaBZe2QLx6o5PCzsEgLrCRNT7f5Ea9uIfr_1O64&_nc_zt=23&_nc_ht=scontent.fsof8-1.fna&_nc_gid=zbETCa75NpQHDGXgTLRZlw&oh=00_AfHGp0gUZnASfTibmj4OMY7KjdCJ9XX4I39-XaJB4MDTjg&oe=680AC927",
+      "name": "Подарък за кръстници за кръщене",
+      "description": "Комплектът включва: декорирана кощница с цвят по избор на клиента- цена 25лв. Икона- цена 15лв. Ракия с персонализиран двустранен етикет с пожелание за кръстниците- цена 25лв. Лазарно гравирана чаша за ракия с надпис по избор на клиента- цена 20лв. Продуктите могат да бъдат допълнени с други по избор например персонализирана покана за кръстници",
+      "price": 85.00,
       "created_at": "2025-02-01T09:30:00Z",
       "updated_at": "2025-03-15T11:45:00Z",
       "customers": [
@@ -33,10 +33,10 @@
     },
     {
       "_id": "2",
-      "imageUrl": "https://example.com/images/wedding-flowers.jpg",
-      "name": "Wedding Flower Bouquet",
-      "description": "A beautiful bouquet of roses, lilies, and peonies, perfect for your wedding day.",
-      "price": 250.00,
+      "imageUrl": "https://scontent.fsof11-1.fna.fbcdn.net/v/t39.30808-6/489156220_122152362080549842_4239459937803954171_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_ohc=262RY4SdTv8Q7kNvwGF__8I&_nc_oc=AdkL_aub6BXikwdZOwyfI1jCAnriiuzy9ikcrrRVqHS_QxgOkSJbB1y9b7q6dUFUC0k&_nc_zt=23&_nc_ht=scontent.fsof11-1.fna&_nc_gid=JUCtH9T4grLpDnLDrKAuTQ&oh=00_AfF_GsEukQLXHydkNevoeA9-klenny6-KjA3JiYb92HuMA&oe=680AA7C2",
+      "name": "Комплект за кръщене в светло розово и бяло",
+      "description": "Комплектът включва: два броя кърпи малка и средна със символ кръст всяка от тях е с цена 10лв. Голяма кърпа за детето с 3 елемента и надпис по избор- цена 45 лв. Ритуална свещ- цена 16лв. Папка за кръщелно свидетелство- 15лв. Кутийка за косичка- цена 10лв. Бутилка за светена вода- цена 7лв. Сапунче ангелче- цена 8лв. Кутия за събиране на всичко в комплекта- цена 35лв.",
+      "price": 156.00,
       "created_at": "2025-03-10T12:15:00Z",
       "updated_at": "2025-03-20T13:50:00Z",
       "customers": [
@@ -49,10 +49,10 @@
     },
     {
       "_id": "3",
-      "imageUrl": "https://example.com/images/wedding-ring.jpg",
-      "name": "Diamond Wedding Ring Set",
-      "description": "A matching set of diamond wedding rings with a timeless design. The perfect symbol of love.",
-      "price": 2500.00,
+      "imageUrl": "https://scontent.fsof8-1.fna.fbcdn.net/v/t39.30808-6/481921396_122144006276549842_3258442761508225945_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=5GboKbpS67AQ7kNvwH_keGy&_nc_oc=AdlQdiW4z8iOBZcn4iR3o4gbbxGY7CZ5t-aK1rlwtg7L_JkAJHTF7KWSb1zvLsXR51w&_nc_zt=23&_nc_ht=scontent.fsof8-1.fna&_nc_gid=PZ7dHIX27CMufRQguKBltQ&oh=00_AfHr5-5QxE97Q8fdRfQp6c1xwdv3ETPPVobPfbpj41bKGg&oe=680A9A90",
+      "name": "Украсени бомбони и подаръчета за гости",
+      "description": "Бомбони мерси голяма кутия, всеки бомбон е опакован в персонализиран етикет- цена 35лв. Мед подарък за гостите- цена 2.30лв. за брой. Могат да бъдат изработени за всякакъв повод - рожден ден, сватба, кръщене и др.",
+      "price": 50.00,
       "created_at": "2025-01-15T15:30:00Z",
       "updated_at": "2025-02-25T16:40:00Z",
       "customers": [

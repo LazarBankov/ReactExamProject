@@ -98,7 +98,7 @@ export default function DetailsProduct() {
               <img
                 src={imageUrl}
                 alt={name}
-                className="w-full h-48 object-cover rounded-t-lg"
+                className="w-full object-cover rounded-t-lg"
               />
               <h2 className="text-xl font-bold mt-4">{name}</h2>
               <p className="text-gray-700 mt-2">{description}</p>
