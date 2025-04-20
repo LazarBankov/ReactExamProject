@@ -2,9 +2,9 @@
     {
       "_id": "0",
       "imageUrl": "/459197011_8585675771444150_1964434466116972985_n.jpg",
-      "name": "Комплект кръщене мъжки",
-      "description": "A stunning white wedding dress made with lace and satin, perfect for a classic wedding.",
-      "price": 1400.00,
+      "name": "Частичен комплект за кръщене братчета",
+      "description": "Комплектът включва: две големи кърпи за децата с надпис и символ по избор на клиента с цена за 1бр. 35лв. Две кутийки една за косичка и една за кръстче цена на 1бр. кутия 10лв. Папка за кръщелно свидетелство с декорация по избор на клиента цена 20лв. Кошничка с декорация по избор на клиента цена 30лв. Възглавничка за кръстче с декорация по избор на клиента цена 15лв.",
+      "price": 105.00,
       "created_at": "2025-01-01T10:00:00Z",
       "updated_at": "2025-03-01T14:30:00Z",
       "type": "dress",
@@ -17,7 +17,7 @@
     },
     {
       "_id": "1",
-      "imageUrl": "https://example.com/images/wedding-cake.jpg",
+      "imageUrl": "https://scontent.fsof11-1.fna.fbcdn.net/v/t39.30808-6/468357321_122122903730549842_4922785253023084763_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=tmxsuBfInr4Q7kNvwH478Zu&_nc_oc=AdlfiN6K826DM-hHZCsItfgGswmc3b-ohCptDWlPQD0__sdLrxBxSCEKttz_-K910z8&_nc_zt=23&_nc_ht=scontent.fsof11-1.fna&_nc_gid=UysoRdLSPi-sZYMYjBqipg&oh=00_AfEWElZYzcKnv_BayXFAvYTRabd0Q1PrzwGbOBiYCH1fiw&oe=680ACAB1",
       "name": "Luxury Wedding Cake",
       "description": "A 5-tier cake decorated with gold accents and fresh flowers, ideal for an extravagant wedding.",
       "price": 1500.00,
