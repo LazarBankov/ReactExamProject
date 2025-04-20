@@ -12,16 +12,7 @@
 
       ],
       "comments": [
-        {
-          "_id": "user123",
-          "username": "John Doe",
-          "comment": "Such a beautiful dress! Can’t wait to see my bride in this."
-        },
-        {
-          "_id": "user456",
-          "username": "Jane Smith",
-          "comment": "The lace details are stunning, absolutely love this design!"
-        }
+
       ]
     },
     {
@@ -37,16 +28,7 @@
       ],
       "type": "cake",
       "comments": [
-        {
-          "_id": "user789",
-          "username": "Emily Brown",
-          "comment": "I had this cake at my wedding, and it was a hit with all our guests!"
-        },
-        {
-          "_id": "user321",
-          "username": "Michael Green",
-          "comment": "The cake design is elegant, but the price is a bit steep."
-        }
+
       ]
     },
     {
@@ -62,16 +44,7 @@
       ],
       "type": "flowers",
       "comments": [
-        {
-          "_id": "user101",
-          "username": "Lily Adams",
-          "comment": "The flowers were fresh and fragrant, exactly what I wanted for my wedding."
-        },
-        {
-          "_id": "user202",
-          "username": "Chris Lewis",
-          "comment": "This bouquet is gorgeous! Highly recommend it for your big day."
-        }
+       
       ]
     },
     {
@@ -87,11 +60,7 @@
       ],
       "type": "rings",
       "comments": [
-        {
-          "_id": "user234",
-          "username": "Sarah White",
-          "comment": "The ring set is exactly as shown in the pictures. So happy with my purchase!"
-        }
+
       ]
     },
     {
@@ -107,11 +76,7 @@
       ],
       "type": "invitations",
       "comments": [
-        {
-          "_id": "user654",
-          "username": "Olivia Harris",
-          "comment": "These invitations were perfect for our wedding! Stylish and affordable."
-        }
+
       ]
     }
   ]
