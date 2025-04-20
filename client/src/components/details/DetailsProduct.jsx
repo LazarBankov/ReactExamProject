@@ -20,6 +20,7 @@ export default function DetailsProduct() {
     description,
     price,
     imageUrl,
+    imageUrl1,
     comments = [],
     customers = [],
   } = product || {};
@@ -97,6 +98,11 @@ export default function DetailsProduct() {
             <div className="flex flex-col items-center bg-white rounded-lg shadow-lg p-6 max-w-sm">
               <img
                 src={imageUrl}
+                alt={name}
+                className="w-full object-cover rounded-t-lg"
+              />
+              <img
+                src={imageUrl1}
                 alt={name}
                 className="w-full object-cover rounded-t-lg"
               />
