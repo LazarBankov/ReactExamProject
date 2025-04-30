@@ -10,6 +10,8 @@ import { useParams } from "react-router";
 import { useState } from "react";
 import { useEffect } from "react";
 
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
 export default function DetailsProduct() {
   const navigate = useNavigate();
   const { productId } = useParams();
@@ -20,7 +22,6 @@ export default function DetailsProduct() {
     description,
     price,
     imageUrl,
-    imageUrl1,
     comments = [],
     customers = [],
   } = product || {};
@@ -33,6 +34,22 @@ export default function DetailsProduct() {
   const addToCart = useAddToCart();
 
   const isCustomer = customers && customers.includes(userId);
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const images = imageUrl || [];
+
+  const handlePrev = () => {
+    setCurrentImageIndex((prev) =>
+      prev === 0 ? images.length - 1 : prev - 1
+    );
+  };
+
+  const handleNext = () => {
+    setCurrentImageIndex((prev) =>
+      prev === images.length - 1 ? 0 : prev + 1
+    );
+  };
 
   const addToCartHandler = async () => {
     if (isAuthenticated) {
@@ -65,10 +82,10 @@ export default function DetailsProduct() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedProduct),
     });
-  
+
     setAllComments([...allComments, commentData]);
     setNewComment("");
-    
+
   }
   const deleteClickHandler = async () => {
     const confirmDelete = window.confirm(
@@ -96,16 +113,31 @@ export default function DetailsProduct() {
         <div className="bg-[#f5c7f1] p-4 rounded-lg mb-6 flex flex-wrap gap-4 justify-center border-0">
           {product ? (
             <div className="flex flex-col items-center bg-white rounded-lg shadow-lg p-6 max-w-sm">
-              <img
-                src={imageUrl}
-                alt={name}
-                className="w-full object-cover rounded-t-lg"
-              />
-              <img
-                src={imageUrl1}
-                alt={name}
-                className="w-full object-cover rounded-t-lg"
-              />
+              {images.length > 0 && (
+                <div className="relative w-full max-w-sm group cursor-pointer">
+                  <img
+                    src={images[currentImageIndex]}
+                    alt={name}
+                    className="w-full object-cover rounded-lg transition duration-300"
+                  />
+
+                  <div
+                    className="absolute left-0 top-0 w-1/2 h-full z-10"
+                    onClick={handlePrev}
+                  ></div>
+
+                  <div
+                    className="absolute right-0 top-0 w-1/2 h-full z-10"
+                    onClick={handleNext}
+                  ></div>
+
+                  <div className="absolute inset-0 flex justify-between items-center px-2 text-white opacity-0 group-hover:opacity-100 transition">
+                    <span className="text-3xl">‹</span>
+                    <span className="text-3xl">›</span>
+                  </div>
+                </div>
+              )}
+
               <h2 className="text-xl font-bold mt-4">{name}</h2>
               <p className="text-gray-700 mt-2">{description}</p>
               <p className="text-gray-900 font-semibold mt-2">{price}лв.</p>
@@ -144,7 +176,7 @@ export default function DetailsProduct() {
                 </div>
               ) : (
                 <p className="text-center text-gray-700">
-                    Няма налични коментари                </p>
+                  Няма налични коментари                </p>
               )}
               {isCustomer && !isAdmin && (
                 <form className="w-full mt-4" onSubmit={handleCommentSubmit}>

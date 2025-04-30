@@ -5,7 +5,7 @@ export default function Product({ product }) {
     return (
         <div className="shadow-lg rounded-2xl overflow-hidden hover:bg-white transition duration-200 max-w-xs mx-auto">
             <img
-                src={product.imageUrl}
+                src={product.imageUrl[0]}
                 alt={product.name}
                 className="w-full h-48 object-cover rounded-lg mb-4 hover:scale-105 transition duration-200"
             />
